@@ -2,3 +2,15 @@ header {
     text-align: center;
     color: blue;
 }
+
+h1 {
+    color: red;
+}
+
+header > h1 {
+    background-color: black;
+}
+
+ol {
+    color: blue;
+}
