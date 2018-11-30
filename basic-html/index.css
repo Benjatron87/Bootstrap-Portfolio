@@ -5,6 +5,7 @@ header {
 
 h1 {
     color: red;
+
 }
 
 header {
@@ -13,5 +14,9 @@ header {
 }
 
 ol {
-    color: blue;
+    color: white;
+}
+
+body {
+    background-color: blue;
 }
