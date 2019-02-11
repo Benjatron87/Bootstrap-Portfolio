@@ -1,3 +1,8 @@
+html {
+    position: relative;
+    min-height: 100%;
+  }
+
 body{
     background: whitesmoke;
     font-family: 'Georgia', Times, Times New Roman, serif;
@@ -30,7 +35,7 @@ body{
     font-size: 16px;
     padding: 5px;
 }
-.text:hover, .submit:hover {
+.text:hover, #submit:hover {
     background: rgb(0, 3, 153);
     text-decoration: none;
     color: white;
@@ -79,6 +84,8 @@ body{
     background: #777777;
     border-top: 10px solid rgb(0, 2, 100);
     color: white;
+    position: absolute;
+    bottom: 0;
 }
 .color {
     background: rgb(0, 2, 100);
@@ -117,4 +124,16 @@ body{
     font-weight: bold; 
     font-size: 26px; 
     margin: 20px;
+}
+
+#thank-you{
+    color:  rgb(0, 2, 100);
+    margin: 20px;
+    margin-left: 0;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+#content{
+    margin-bottom: 40px;
 }
