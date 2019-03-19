@@ -36,11 +36,11 @@ app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
 
-app.get("/api/" + process.env.SECRET, function(req, res) {
+app.get("/api/emails", function(req, res) {
 res.json(emails);
 });
 
-app.post("/api/" + process.env.SECRET, function(req, res) {
+app.post("/api/emails", function(req, res) {
 
     emails.push(req.body);
 
