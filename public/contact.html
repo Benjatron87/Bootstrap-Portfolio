@@ -288,6 +288,27 @@ body{
             </div>
     </body>
 
-    <script src="javascript/app.js"></script>
+    <script>    
+
+            $(".submit").on('click', function(){
+        
+                const newPerson = {
+                    name: $("#name").val().trim(),
+                    email: $("#email").val().trim(),
+                    phone: $("#phone").val().trim(),
+                    subject: $("#subject").val().trim(),
+                    message: $("#message").val().trim()
+                }
+        
+                $.post("/api/" + process.env.SECRET, newPerson, function(data){});
+        
+                $(".form-control").val('');
+                $("#hide").empty();
+        
+                $("#thank-you").html('Thank You For Your Response!');
+        
+                $(".submit").removeAttr('class', 'submit').addClass('reload');
+            })
+            </script>
 
 </html>
