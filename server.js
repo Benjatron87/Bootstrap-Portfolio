@@ -18,33 +18,32 @@ var transporter = nodemailer.createTransport({
     user: process.env.EMAIL,
     clientId: process.env.ID,
     clientSecret: process.env.SECRET,
-    // refreshToken: process.env.TOKEN                      
+    refreshToken: process.env.TOKEN                      
   }
 });
 
 const emails = require("./app/data/emails");
 
-transporter.sendMail(emails[0], function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
-
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
 
-app.get("/api/emails", function(req, res) {
-res.json(emails);
-});
+// app.get("/api/emails", function(req, res) {
+//      res.json(emails);
+// });
 
 app.post("/api/emails", function(req, res) {
 
     emails.push(req.body);
 
-    res.json(true)
+    transporter.sendMail(emails[0], function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+    // res.json(true)
 });
 
 app.get("/portfolio", function(req, res) {
